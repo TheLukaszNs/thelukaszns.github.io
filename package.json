@@ -1,5 +1,7 @@
 {
   "name": "portfolio2",
+  "author": "Łukasz Myśliwiec <lmysliwiec10@gmail.com>",
+  "description": "My Portfolio Page",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
