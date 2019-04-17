@@ -1,5 +1,6 @@
 import React from 'react';
 import App, { Container, NextAppContext } from 'next/app';
+import Page from '../components/Page';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }: NextAppContext) {
@@ -17,7 +18,9 @@ class MyApp extends App {
 
     return (
       <Container>
-        <Component {...pageProps} />
+        <Page>
+          <Component {...pageProps} />
+        </Page>
       </Container>
     );
   }
