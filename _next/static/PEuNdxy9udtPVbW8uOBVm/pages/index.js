@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["d0a3"],{"/EDR":function(n,t,a){(window.__NEXT_P=window.__NEXT_P||[]).push(["/",function(){var n=a("23aj");return{page:n.default||n}}])},"23aj":function(n,t,a){"use strict";a.r(t);var e=a("q1tI"),u=a.n(e);t.default=function(){return u.a.createElement("h3",null,"It works!")}}},[["/EDR","5d41","9da1"]]]);
