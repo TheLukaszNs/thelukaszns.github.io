@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Button from '../Button';
+import Link from 'next/link';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -21,7 +23,7 @@ const NavItem = styled.li`
   font-size: 1.6em;
 
   :not(:last-child) {
-    margin-right: 50px;
+    margin-right: 75px;
   }
 `;
 
@@ -33,9 +35,23 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({ title }) => (
   <StyledNav>
     <Title>{title}</Title>
     <Nav>
-      <NavItem>contact</NavItem>
-      <NavItem>projects</NavItem>
-      <NavItem>about</NavItem>
+      <NavItem>
+        <Link href='/contact'>
+          <a>
+            <Button buttonType='raised'>contact</Button>
+          </a>
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link href='/projects'>
+          <a>projects</a>
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link href='/about'>
+          <a>about</a>
+        </Link>
+      </NavItem>
     </Nav>
   </StyledNav>
 );
