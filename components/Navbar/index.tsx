@@ -1,12 +1,21 @@
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 import Button from '../Button';
 import Link from 'next/link';
+
+//TODO: Replace all calls to **breakpoint** with normal css Media Queries
 
 const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+
+  ${breakpoint('mobile', 'desktop')`
+    flex-direction: column;
+    position: fixed;
+
+  `}
 `;
 
 const Title = styled.h2`
@@ -37,19 +46,46 @@ const Title = styled.h2`
       width: 100%;
     }
   }
+
+  ${breakpoint('mobile', 'desktop')`
+    font-size: 2.7em;
+    margin-bottom: 20px;
+
+    &::before {
+      transform: rotateZ(-6deg) skewX(-30deg);
+      padding-top: 14px;
+      padding-bottom: 14px;
+      bottom: 0;
+
+      width: 100%;
+    }
+  `}
 `;
 
 const Nav = styled.ul`
   list-style-type: none;
+
+  ${breakpoint('mobile', 'desktop')`
+    display: none;
+  `}
 `;
 
 const NavItem = styled.li`
-  display: inline;
+  display: inline-block;
   font-size: 1.6em;
 
   :not(:last-child) {
     margin-right: 75px;
   }
+
+  ${breakpoint('mobile', 'desktop')`
+    display: block;
+    width: 100%;
+
+    :not(:last-child) {
+      margin: 0 0 20px;
+    }
+  `}
 `;
 
 type NavbarProps = {

@@ -24,6 +24,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Playfair Display', serif;
     font-size: 12px;
     background: linear-gradient(119.1deg, #FFFFFF -0.05%, #F2F2F2 90.1%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
   a {

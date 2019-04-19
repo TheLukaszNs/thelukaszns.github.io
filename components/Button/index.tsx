@@ -11,7 +11,6 @@ const Button = styled.button<ButtonProps>`
   padding: 10px 25px;
   cursor: pointer;
   transition: all 0.25s;
-  width: fit-content;
 
   ${({ buttonType }) =>
     buttonType === 'raised'

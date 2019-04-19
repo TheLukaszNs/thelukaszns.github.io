@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoint from 'styled-components-breakpoint';
 import Button from '../components/Button';
 import HeroImg from '../public/hero.png';
 
@@ -7,13 +8,18 @@ const StyledWrapper = styled.main`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${breakpoint('mobile', 'desktop')`
+    align-items: flex-start;
+    margin-top: 150px;
+  `}
 `;
 
 const HeroText = styled.div`
   display: inline-flex;
   flex-direction: column;
 
-  > * {
+  > *:not(:last-child) {
     margin-bottom: 50px;
   }
 `;
@@ -23,6 +29,10 @@ const HeroImage = styled.div`
   background-size: cover;
   width: 410px;
   height: 400px;
+
+  ${breakpoint('mobile', 'desktop')`
+    display: none;
+  `}
 `;
 
 const Title = styled.h1`
