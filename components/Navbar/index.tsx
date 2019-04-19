@@ -12,6 +12,31 @@ const StyledNav = styled.nav`
 const Title = styled.h2`
   font-size: 2.3em;
   font-weight: normal;
+  position: relative;
+  transition: all 0.1s;
+
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    background: #f2994a;
+    width: 15%;
+    padding: 5px 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  &:hover {
+    &::before {
+      transform: rotateZ(-6deg) skewX(-30deg);
+      padding-top: 14px;
+      padding-bottom: 14px;
+      bottom: 0;
+
+      width: 100%;
+    }
+  }
 `;
 
 const Nav = styled.ul`
@@ -33,7 +58,11 @@ type NavbarProps = {
 
 const Navbar: React.FunctionComponent<NavbarProps> = ({ title }) => (
   <StyledNav>
-    <Title>{title}</Title>
+    <Title>
+      <Link href='/'>
+        <a>{title}</a>
+      </Link>
+    </Title>
     <Nav>
       <NavItem>
         <Link href='/contact'>
